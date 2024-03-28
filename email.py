@@ -2,7 +2,7 @@
 import os
 
 # Imported os system to create a clear() method
-# The consol gets clustered and hard to read and follow if
+# The console gets clustered and hard to read and follow if
 # the user keeps using the app
 
 def clear():
@@ -53,19 +53,19 @@ Event Planning Team""",
 
 
 # --- Email Class --- #
-# Create the class, constructor and methods to create a new Email object.
-class Email():
+# Create the class, constructor, and methods to create a new Email object.
+class Email:
     """This class initializes an object with a has_been_read variable as False
 
     Then it initializes an object with these attributes:
 
-    >>> sender email_address
-    >>> subject_line
-    >>> email_content
+    > Sender email_address
+    > subject_line
+    > email_content
 
     It contains a method that changes a has_been_read status of the variable
     to True that the object can call.
-    >>> mark_As_read()
+    > mark_As_read()
 
     """
 
@@ -100,15 +100,15 @@ def populate_inbox():
     The emails are generated from the emails_dictionary
     """
 
-    email1 = Email(emails_dict["email1"]["send_email"], emails_dict["email1"]["sub_line"], \
+    email1 = Email(emails_dict["email1"]["send_email"], emails_dict["email1"]["sub_line"],
         emails_dict["email1"]["content"])
     inbox.append(email1)
 
-    email2 = Email(emails_dict["email2"]["send_email"], emails_dict["email2"]["sub_line"], \
+    email2 = Email(emails_dict["email2"]["send_email"], emails_dict["email2"]["sub_line"],
         emails_dict["email2"]["content"])
     inbox.append(email2)
 
-    email3 = Email(emails_dict["email3"]["send_email"], emails_dict["email3"]["sub_line"], \
+    email3 = Email(emails_dict["email3"]["send_email"], emails_dict["email3"]["sub_line"],
         emails_dict["email3"]["content"])
     inbox.append(email3)
 
@@ -118,9 +118,9 @@ def list_emails():
     """Prints out all the emails in the inbox it prints the emails subject_line attribute
     and the emails corresponding number:
 
-    >>> 0 email subject line
-    >>> 1 email subject line
-    >>> 2 email subject line
+    > 0 email subject lines
+    > 1 email subject line
+    > 2 email subject line
 
     """
     print("\nThis is your inbox:\n")
@@ -134,11 +134,11 @@ def list_emails():
 def read_email(index):
     """Uses index argument
 
-    prints out the entire Email that the user chose to read
+    Prints out the entire Email that the user chose to read
     and calls on the function mark_as_read() on that email object
     and updates the status of has_been_read to True
 
-    If the user input index doesn't exist it catches the exception
+    If the user input index doesn't exist, it catches the exception
     and lets the user know that email doesn't exist
     """
     try:
@@ -171,8 +171,9 @@ while MENU:
 
     Enter selection: '''))
 
-    # If user chose to read email clears the terminal list all emails in inbox
-    # and requests input to what email they want to read. prints pout the email based on choice
+    # If a user chose to read email, clears the terminal list all emails in inbox
+    # and requests input to what email they want to read.
+    # Prints pout the email based on choice
     if user_choice == 1:
         clear()
         list_emails()
@@ -181,7 +182,7 @@ while MENU:
         clear()
         read_email(email_index)
 
-    # if user chose to view unread emails clear the terminal and print emails subject lines
+    # if a user chose to view unread emails, clear the terminal and print emails subject lines
     # of emails with has_been_read status as False
     elif user_choice == 2:
         clear()
@@ -190,7 +191,7 @@ while MENU:
             if item.has_been_read is False:
                 print(f"- {item.subject_line}")
 
-    # If user chose to exit clears terminal and lets them know they exited
+    # If a user chose to exit clears terminal and lets them know they exited
     elif user_choice == 3:
         clear()
         print("You Have closed the Emails app \nRun the program again to access the app\n")
