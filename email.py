@@ -1,46 +1,49 @@
-#=============  Clear screen function   ================
+# =============  Clear screen function   ================
 import os
+
 
 # Imported os system to create a clear() method
 # The console gets clustered and hard to read and follow if
 # the user keeps using the app
 
+
 def clear():
     """Clears the console from all text if its called"""
     os.system('cls')
 
-#=============  Final code  =========================
 
+# =============  Final code  =========================
 
-### --- OOP Email Simulator --- ###
+# --- OOP Email Simulator --- #
+
 
 emails_dict = {
-"email1": {
-            "send_email": "johndoe1234@gmail.com",
-            "sub_line": "Product Specifications Inquiry",
-            "content": """\nHi,
+    "email1": {
+        "send_email": "johndoe1234@gmail.com",
+        "sub_line": "Product Specifications Inquiry",
+        "content": """\nHi,
 
 Could you please provide the specifications for your latest product line?
 Specifically interested in dimensions, material, and color options.
 
 Thanks,
 John"""
-            },
-"email2": {
-            "send_email": "eventplanning456@yahoo.com",
-            "sub_line": "Collaboration Opportunity",
-            "content": """\nHi there,
+    },
+    "email2": {
+        "send_email": "eventplanning456@yahoo.com",
+        "sub_line": "Collaboration Opportunity",
+        "content": """\nHi there,
 
 We're interested in collaborating with your company.
 Let's discuss further.
 
 Best,
 Marketing Team Alpha""",
-            },
-"email3": {
-            "send_email": "eventplanning456@yahoo.com",
-            "sub_line": "Volunteer Orientation Invite",
-            "content": """\nHello,
+    },
+    "email3": {
+        "send_email": "eventplanning456@yahoo.com",
+        "sub_line": "Volunteer Orientation Invite",
+        "content": """\nHello,
 
 Join us for a volunteer orientation session to learn about upcoming
 events and responsibilities.
@@ -48,7 +51,7 @@ Save the date!
 
 Regards,
 Event Planning Team""",
-            },
+    },
 }
 
 
@@ -78,7 +81,6 @@ class Email:
         self.subject_line = subject_line
         self.email_content = email_content
 
-
     # Create the method to change 'has_been_read' emails from False to True.
     def mark_as_read(self):
         """ Changes the email object has_been_read attribute to True """
@@ -88,6 +90,7 @@ class Email:
 # --- Lists --- #
 # Initialise an empty list to store the email objects.
 inbox = []
+
 
 # --- Functions --- #
 # Build out the required functions for your program.
@@ -101,15 +104,15 @@ def populate_inbox():
     """
 
     email1 = Email(emails_dict["email1"]["send_email"], emails_dict["email1"]["sub_line"],
-        emails_dict["email1"]["content"])
+                   emails_dict["email1"]["content"])
     inbox.append(email1)
 
     email2 = Email(emails_dict["email2"]["send_email"], emails_dict["email2"]["sub_line"],
-        emails_dict["email2"]["content"])
+                   emails_dict["email2"]["content"])
     inbox.append(email2)
 
     email3 = Email(emails_dict["email3"]["send_email"], emails_dict["email3"]["sub_line"],
-        emails_dict["email3"]["content"])
+                   emails_dict["email3"]["content"])
     inbox.append(email3)
 
 
@@ -146,8 +149,8 @@ def read_email(index):
         \nEmail: {inbox[index].email_address}
         \nSubject line: {inbox[index].subject_line}
         \n{inbox[index].email_content}""")
-        
-        #marks as read and lets user know
+
+        # marks as read and lets user know
         inbox[index].mark_as_read()
         print("This email has been marked as: Read")
     except IndexError:
